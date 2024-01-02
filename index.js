@@ -4,6 +4,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
 const app = express();
 app.use(express.json());
+
 const todoHandler = require("./routeHandler/todoHandler");
 
 //database connection with mongoose
@@ -39,21 +40,22 @@ const client = new MongoClient(uri, {
   },
 });
 
-async function run() {
-  try {
-    const userCollection = client.db("todos").collection("users");
+// async function run() {
+//   try {
+//     const userCollection = client.db("todos").collection("users");
 
-    app.post("/", async (req, res) => {
-      const order = req.body;
-      const result = await userCollection.insertOne(order);
-      console.log(result);
-      res.send(result);
-    });
-  } finally {
-  }
-}
+//     app.post("/", async (req, res) => {
+//       const order = req.body;
+//       const result = await userCollection.insertOne(order);
+//       console.log(result);
+//       res.send(result);
+//     });
+//   } finally {
+//   }
+// }
 
-run().catch((error) => console.log(error));
+// run().catch((error) => console.log(error));
+
 const port = 8000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
