@@ -10,7 +10,7 @@ const todoHandler = require("./routeHandler/todoHandler");
 //database connection with mongoose
 mongoose
   .connect(
-    "mongodb+srv://Puser:NI2PNDReQ4Q3T6I1@cluster0.mz3fw7v.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://Puser:NI2PNDReQ4Q3T6I1@cluster0.mz3fw7v.mongodb.net/todoApp?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
